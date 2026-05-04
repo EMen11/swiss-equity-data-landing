@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>swiss-equity-data — Swiss equity fundamentals via Python API</title>
-  <meta name="description" content="Structured fundamental data for Swiss listed companies. Python API, web interface and clean exports for analysts, quants and researchers working on SIX-listed equities. AI-ready access layer under exploration." />
+  <title>swiss-equity-data — Swiss equity fundamentals for analysis and AI workflows</title>
+  <meta name="description" content="Structured fundamental data for Swiss listed companies. Python API, web interface, clean exports and AI-ready access for analysts, quants, researchers and builders working on SIX-listed equities." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -353,7 +353,7 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 1px;
       background: var(--border);
       margin-top: 56px;
@@ -612,6 +612,10 @@
     .footer-links a:hover { color: var(--text-muted); }
 
     /* RESPONSIVE */
+    @media (max-width: 920px) {
+      .product-grid { grid-template-columns: 1fr 1fr; }
+    }
+
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
       .nav-links { display: none; }
@@ -644,10 +648,10 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-label">SIX Swiss Exchange · Fundamentals API</div>
-    <h1>Swiss equity fundamentals,<br /><em>finally accessible.</em></h1>
+    <div class="hero-label">SIX Swiss Exchange · Fundamentals · API · AI workflows</div>
+    <h1>Swiss equity fundamentals,<br /><em>structured for analysis.</em></h1>
     <p class="hero-sub">
-      Python API, web interface and clean exports for analysts, quants and researchers working on SIX-listed equities. No Bloomberg terminal required. AI-assisted access is being explored for future workflows.
+      Clean, comparable fundamentals for analysts, quants, researchers and builders working on SIX-listed equities. Access via Python API, web interface, Excel-ready exports, and an exploratory MCP layer for AI-assisted workflows.
     </p>
     <div class="hero-actions">
       <a href="https://tally.so/r/Ek85DX" target="_blank" rel="noopener noreferrer" class="btn-primary">Request early access →</a>
@@ -703,7 +707,7 @@
   <section class="product-section" id="product">
     <div class="section-inner">
       <div class="section-label">The product</div>
-      <h2>One clean layer for<br />Swiss equity fundamentals.</h2>
+      <h2>One structured layer for<br />Swiss equity data workflows.</h2>
 
       <div class="product-grid">
         <div class="product-card">
@@ -720,6 +724,11 @@
           <div class="product-icon">↓</div>
           <h3>Clean exports</h3>
           <p>CSV and Parquet exports with provenance metadata. Reproducible, versionable, ready for your models without manual cleaning.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">◈</div>
+          <h3>AI-ready / MCP</h3>
+          <p>Exploratory MCP layer for querying verified Swiss financial data through Claude or agent-based workflows. Designed for analysis support, not investment recommendations.</p>
         </div>
       </div>
 
@@ -753,7 +762,7 @@
       </div>
 
       <div style="margin-top: 16px; padding: 14px 20px; border: 1px solid var(--border); border-left: 2px solid var(--border-light); background: var(--surface);">
-        <span style="font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.12em; text-transform: uppercase;">Future access layer under exploration — </span><span style="font-size: 13px; color: var(--text-dim);">MCP / AI-assisted workflows for querying verified Swiss financial data. This is exploratory and not part of the initial MVP.</span>
+        <span style="font-size: 13px; color: var(--text-dim);">The MCP layer is exploratory and not part of the initial commercial MVP. The core product remains structured fundamentals via API, web and exports.</span>
       </div>
     </div>
   </section>
@@ -775,7 +784,7 @@
         </div>
         <div class="who-card">
           <div class="role">Fintech builders</div>
-          <p>Early-stage products that need Swiss equity data to move fast. No direct enterprise data vendor contract. No heavy procurement process.</p>
+          <p>Fintech builders and teams experimenting with AI-assisted finance workflows that need reliable Swiss company data, not model guesses or manually cleaned spreadsheets.</p>
         </div>
         <div class="who-card">
           <div class="role">Researchers</div>
@@ -807,7 +816,7 @@
           <h3>Project status</h3>
           <div class="status-badge"><span class="status-dot"></span> Currently in market validation</div>
           <br /><br />
-          <p>Running data quality audits on SIX-listed equities and speaking with prospective pilot users. Not yet launched. Seeking early feedback from people who work with Swiss listed companies. Data coverage and redistribution rights are currently being validated before launch. AI-assisted access, including a possible MCP layer, is exploratory and subject to market validation.</p>
+          <p>Running data quality audits on SIX-listed equities and speaking with prospective pilot users. Not yet launched. Seeking early feedback from people who work with Swiss listed companies. Data coverage and redistribution rights are currently being validated before launch. AI-ready access, including a possible MCP layer, is being explored in parallel and remains subject to market validation and licensing clarification.</p>
           <br />
           <p style="color: var(--text-dim); font-size: 13px;">Built by <strong style="color: var(--text-muted);">Elie Menassa</strong> — Mathematical Data Scientist, CFA Candidate.</p>
         </div>

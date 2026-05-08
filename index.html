@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>swiss-equity-data — Swiss equity fundamentals for analysis and AI workflows</title>
-  <meta name="description" content="Structured fundamental data for Swiss listed companies. Python API, web interface, clean exports and AI-ready access for analysts, quants, researchers and builders working on SIX-listed equities." />
+  <meta name="description" content="Public beta for Swiss listed company fundamentals: normalized annual financials, ratios, reliability notes, Excel/CSV exports and a basic analytics layer for selected Swiss equities." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -640,33 +640,37 @@
     <ul class="nav-links">
       <li><a href="#problem">Problem</a></li>
       <li><a href="#product">Product</a></li>
+      <li><a href="#beta">Beta</a></li>
       <li><a href="#who">For whom</a></li>
-      <li><a href="#early-access">Early access</a></li>
+      <li><a href="#early-access">Feedback</a></li>
     </ul>
     <div style="display: flex; align-items: center; gap: 16px;">
       <a href="fr.html" style="font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-dim); text-decoration: none; letter-spacing: 0.1em;">FR</a>
-      <div class="nav-badge">Market validation</div>
+      <div class="nav-badge">Public beta live</div>
     </div>
   </nav>
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-label">SIX Swiss Exchange · Fundamentals · API · AI workflows</div>
+    <div class="hero-label">SIX Swiss Exchange · Public Beta · Fundamentals · Analytics</div>
     <h1>Swiss equity fundamentals,<br /><em>structured for analysis.</em></h1>
     <p class="hero-sub">
-      Clean, comparable fundamentals for analysts, quants, researchers and builders working on SIX-listed equities. Access via Python API, web interface, Excel-ready exports, and an exploratory MCP layer for AI-assisted workflows.
+      Public beta showcasing normalized annual fundamentals for selected Swiss listed companies, enriched with data coverage notes, reliability checks, exportable datasets and a basic analytics layer.
+      <br /><br />
+      Current beta: 5 companies, up to 10 years of annual data, financials, ratios, historical charts, reliability notes and Excel/CSV exports.
     </p>
     <div class="hero-actions">
-      <a href="https://tally.so/r/Ek85DX" target="_blank" rel="noopener noreferrer" class="btn-primary">Request early access →</a>
-      <a href="https://pypi.org/project/swiss-finance-data/" target="_blank" class="btn-secondary">View swiss-finance-data on PyPI ↗</a>
+      <a href="https://swiss-equity-data-beta.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">Open public beta →</a>
+      <a href="https://tally.so/r/Ek85DX" target="_blank" rel="noopener noreferrer" class="btn-secondary">Give feedback / request access →</a>
     </div>
 
     <div class="code-block">
-      <span class="code-comment"># Coming soon</span><br />
-      <span class="code-keyword">pip install</span> swiss-equity-data<br /><br />
-      <span class="code-keyword">from</span> swiss_equity_data <span class="code-keyword">import</span> get_fundamentals<br />
-      df = <span class="code-fn">get_fundamentals</span>(<span class="code-string">"NESN.SW"</span>, years=<span class="code-string">10</span>)<br />
-      <span class="code-comment"># → income, balance, cashflow, ratios</span>
+      <span class="code-comment"># Public beta</span><br />
+      companies = [<span class="code-string">"DKSH.SW"</span>, <span class="code-string">"HIAG.SW"</span>, <span class="code-string">"SCMN.SW"</span>, <span class="code-string">"GEBN.SW"</span>, <span class="code-string">"SIKA.SW"</span>]<br /><br />
+      <span class="code-comment"># Available now</span><br />
+      annual_fundamentals = <span class="code-string">"up to 10 years"</span><br />
+      outputs = [<span class="code-string">"web app"</span>, <span class="code-string">"charts"</span>, <span class="code-string">"Excel"</span>, <span class="code-string">"CSV"</span>]<br />
+      layers = [<span class="code-string">"data"</span>, <span class="code-string">"reliability notes"</span>, <span class="code-string">"basic analytics"</span>]
     </div>
 
     <div class="hero-scroll">
@@ -679,7 +683,10 @@
   <section class="problem-section" id="problem">
     <div class="section-inner">
       <div class="section-label">The problem</div>
-      <h2>Swiss fundamental data is<br />fragmented, expensive, or broken.</h2>
+      <h2>Swiss fundamental data is available,<br />but rarely analysis-ready.</h2>
+      <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 720px;">
+        The gap is especially visible outside the mega caps: mid/small caps require manual collection, cleaning, normalization and quality checks before they can be used in Excel, Python or valuation workflows.
+      </p>
 
       <div class="problem-grid">
         <div class="problem-item">
@@ -710,28 +717,28 @@
   <section class="product-section" id="product">
     <div class="section-inner">
       <div class="section-label">The product</div>
-      <h2>One structured layer for<br />Swiss equity data workflows.</h2>
+      <h2>Data Layer + Quality Checks +<br />Basic Analytics Layer.</h2>
 
       <div class="product-grid">
         <div class="product-card">
-          <div class="product-icon">⌨</div>
-          <h3>Python API</h3>
-          <p>Native Python package. Clean DataFrames, normalized field names, consistent date ranges. No wrapper around a flaky scraper.</p>
+          <div class="product-icon">⌁</div>
+          <h3>Data layer</h3>
+          <p>Normalized annual fundamentals for selected Swiss listed companies: income statement, balance sheet, cash flow, prices, market cap and enterprise value.</p>
         </div>
         <div class="product-card">
-          <div class="product-icon">⬡</div>
-          <h3>Web interface</h3>
-          <p>Browse financials for any SIX-listed company. Search, filter, compare. No terminal login, no spreadsheet gymnastics.</p>
+          <div class="product-icon">✓</div>
+          <h3>Quality checks</h3>
+          <p>Coverage notes, missing fields, calculated values and reliability context. The goal is not to hide limitations, but to make data quality visible.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">⌁</div>
+          <h3>Basic analytics</h3>
+          <p>Ratios, historical charts, company comparisons and simple analytical indicators. No stock picking, no buy/sell recommendations.</p>
         </div>
         <div class="product-card">
           <div class="product-icon">↓</div>
-          <h3>Clean exports</h3>
-          <p>CSV and Parquet exports with provenance metadata. Reproducible, versionable, ready for your models without manual cleaning.</p>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">◈</div>
-          <h3>AI-ready / MCP</h3>
-          <p>Exploratory MCP layer for querying verified Swiss financial data through Claude or agent-based workflows. Designed for analysis support, not investment recommendations.</p>
+          <h3>Exports</h3>
+          <p>Excel and CSV exports for analysts, valuation work, research workflows and Python/BI exploration.</p>
         </div>
       </div>
 
@@ -755,17 +762,42 @@
 
       <div style="margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border);">
         <div style="background: var(--surface); padding: 24px 28px;">
-          <div style="font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px;">Coverage at launch</div>
-          <p style="font-size: 14px; color: var(--text-muted);">SMI (20 companies) + selected SPI mid caps. Full SPI coverage planned after data quality validation.</p>
+          <div style="font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px;">Current beta coverage</div>
+          <p style="font-size: 14px; color: var(--text-muted);">Current beta is limited to 5 companies. Broader SMI/SPI coverage is on the roadmap after feedback and data quality validation.</p>
         </div>
         <div style="background: var(--surface); padding: 24px 28px;">
           <div style="font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px;">Historical depth</div>
-          <p style="font-size: 14px; color: var(--text-muted);">Targeting up to 30 years of historical fundamentals, subject to data quality validation. Normalised across fiscal year conventions.</p>
+          <p style="font-size: 14px; color: var(--text-muted);">Available now: up to 10 years of annual data for selected companies. Longer history remains subject to data availability and quality checks.</p>
         </div>
       </div>
 
       <div style="margin-top: 16px; padding: 14px 20px; border: 1px solid var(--border); border-left: 2px solid var(--border-light); background: var(--surface);">
-        <span style="font-size: 13px; color: var(--text-dim);">The MCP layer is exploratory and not part of the initial commercial MVP. The core product remains structured fundamentals via API, web and exports.</span>
+        <span style="font-size: 13px; color: var(--text-dim);">The Python API and MCP layer remain on the roadmap. The current public beta focuses on web exploration, exports, reliability notes and a first analytics layer.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BETA -->
+  <section class="cred-section" id="beta">
+    <div class="section-inner">
+      <div class="section-label">Public beta</div>
+      <h2>Current public beta</h2>
+      <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 720px;">A working proof of concept, not a full commercial product yet.</p>
+
+      <div class="product-grid">
+        <div class="product-card"><h3>5 companies</h3><p>5 listed Swiss companies</p></div>
+        <div class="product-card"><h3>10 years</h3><p>Up to 10 years of annual data</p></div>
+        <div class="product-card"><h3>Financials</h3><p>Normalized financial statements</p></div>
+        <div class="product-card"><h3>Ratios</h3><p>Calculated ratios and margins</p></div>
+        <div class="product-card"><h3>Charts</h3><p>Historical charts</p></div>
+        <div class="product-card"><h3>Comparisons</h3><p>Company comparisons</p></div>
+        <div class="product-card"><h3>Reliability</h3><p>Data coverage and reliability notes</p></div>
+        <div class="product-card"><h3>Exports</h3><p>Excel and CSV exports</p></div>
+      </div>
+
+      <div style="margin-top: 32px; padding: 24px 28px; border: 1px solid var(--border); background: var(--surface);">
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px;">Covered companies: DKSH.SW, HIAG.SW, SCMN.SW, GEBN.SW, SIKA.SW.</p>
+        <a href="https://swiss-equity-data-beta.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">Open public beta →</a>
       </div>
     </div>
   </section>
@@ -778,26 +810,26 @@
 
       <div class="who-grid">
         <div class="who-card">
-          <div class="role">Analysts</div>
-          <p>Small buy-side teams and independent researchers who need clean data without maintaining their own pipeline.</p>
+          <div class="role">Small asset managers</div>
+          <p>Small Swiss or European equity managers who want to screen and compare SPI companies without rebuilding their own data pipeline.</p>
         </div>
         <div class="who-card">
-          <div class="role">Quants & Devs</div>
-          <p>Finance developers who need SIX fundamentals in a DataFrame, not a PDF. Python-native, no brittle scraper.</p>
+          <div class="role">M&amp;A / valuation boutiques</div>
+          <p>Corporate finance, M&amp;A and valuation teams that need Swiss listed comparables for private company valuation work.</p>
         </div>
         <div class="who-card">
-          <div class="role">Fintech builders</div>
-          <p>Fintech builders and teams experimenting with AI-assisted finance workflows that need reliable Swiss company data, not model guesses or manually cleaned spreadsheets.</p>
+          <div class="role">Independent analysts</div>
+          <p>Analysts, newsletters and data-finance writers who need clean numbers, charts and exports on Swiss listed companies.</p>
         </div>
         <div class="who-card">
-          <div class="role">Researchers</div>
-          <p>Finance professors and academic labs building factor models or panel studies on Swiss listed companies.</p>
+          <div class="role">Finance/data builders</div>
+          <p>Developers, fintech builders and AI workflow builders who need structured Swiss equity data as a reliable input layer.</p>
         </div>
       </div>
 
       <div class="not-for">
         <div class="not-for-label">Not built for</div>
-        <p>Large banks and institutions with existing Bloomberg or Refinitiv access. Highly technical quants who prefer building their own pipeline from scratch. Family offices with heavy FINMA compliance requirements.</p>
+        <p>Not a stock-picking tool. No buy/sell recommendations. Not a Bloomberg replacement. Current beta is limited to 5 companies. Broader SMI/SPI coverage is roadmap. Python API and MCP are roadmap, not the current product.</p>
       </div>
     </div>
   </section>
@@ -813,13 +845,15 @@
           <h3>swiss-finance-data on PyPI</h3>
           <p>Open-source Python package published on PyPI, covering Swiss macro and market data. It has generated organic interest from finance professors and fintech developers, and serves as the technical foundation for this broader Swiss financial data project.</p>
           <br />
-          <a href="https://pypi.org/project/swiss-finance-data/" target="_blank" style="font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; letter-spacing: 0.06em;">View on PyPI ↗</a>
+          <a href="https://pypi.org/project/swiss-finance-data/" target="_blank" rel="noopener noreferrer" style="font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; letter-spacing: 0.06em;">View on PyPI ↗</a>
         </div>
         <div class="cred-block">
           <h3>Project status</h3>
-          <div class="status-badge"><span class="status-dot"></span> Currently in market validation</div>
+          <div class="status-badge"><span class="status-dot"></span> Public beta live</div>
           <br /><br />
-          <p>Running data quality audits on SIX-listed equities and speaking with prospective pilot users. Not yet launched. Seeking early feedback from people who work with Swiss listed companies. Data coverage and redistribution rights are currently being validated before launch. AI-ready access, including a possible MCP layer, is being explored in parallel and remains subject to market validation and licensing clarification.</p>
+          <p>Swiss Equity Data now has a live public beta with 5 selected Swiss listed companies, up to 10 years of annual fundamentals, calculated ratios, reliability notes, charts and Excel/CSV exports. The beta does not validate commercial demand yet, but it provides a real product demo for market feedback.</p>
+          <br />
+          <p>Next step: validate whether qualified prospects use the exports, request broader coverage, and see value in the reliability layer.</p>
           <br />
           <p style="color: var(--text-dim); font-size: 13px;">Built by <strong style="color: var(--text-muted);">Elie Menassa</strong> — Mathematical Data Scientist, CFA Candidate.</p>
         </div>
@@ -831,23 +865,24 @@
   <section class="cta-section" id="early-access">
     <div class="cta-inner">
       <div class="cta-text">
-        <h2>Request<br /><em>early access.</em></h2>
+        <h2>Explore<br /><em>the public beta.</em></h2>
         <p>
-          We're onboarding a small group of pilot users before launch. If you work with Swiss listed companies and care about clean, reliable fundamental data — we'd like to hear from you.
+          Swiss Equity Data is now live as a public beta. Try the current dataset, download the exports, and share feedback if you work with Swiss listed companies, valuation, research or data workflows.
         </p>
         <div style="font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-dim); line-height: 1.8;">
-          — No commitment required<br />
-          — Pilot pricing for early users<br />
-          — Direct line to the builder
+          — Public beta available now<br />
+          — Feedback from qualified users wanted<br />
+          — API, broader coverage and MCP layer on the roadmap
         </div>
       </div>
 
       <div class="cta-form cta-card">
         <p>
-          swiss-equity-data is currently onboarding pilot users before launch.
+          Open the public beta, explore the current 5-company dataset, then share feedback or request access for broader coverage discussions.
         </p>
-        <a href="https://tally.so/r/Ek85DX" target="_blank" rel="noopener noreferrer" class="btn-primary">Request early access →</a>
-        <div class="form-note">Email required. Other fields are optional.</div>
+        <a href="https://swiss-equity-data-beta.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">Open public beta →</a>
+        <a href="https://tally.so/r/Ek85DX" target="_blank" rel="noopener noreferrer" class="btn-secondary">Give feedback / request access →</a>
+        <div class="form-note">Public proof of concept. Commercial demand still to validate.</div>
       </div>
     </div>
   </section>
@@ -856,12 +891,13 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-left">
-        swiss-equity-data · by <span>Elie Menassa</span> · Market validation phase
+        swiss-equity-data · by <span>Elie Menassa</span> · Public beta live
       </div>
       <div class="footer-links">
-        <a href="https://pypi.org/project/swiss-finance-data/" target="_blank">PyPI</a>
-        <a href="https://github.com/Emen11" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/elie-menassa" target="_blank">LinkedIn</a>
+        <a href="https://swiss-equity-data-beta.streamlit.app/" target="_blank" rel="noopener noreferrer">Beta</a>
+        <a href="https://pypi.org/project/swiss-finance-data/" target="_blank" rel="noopener noreferrer">PyPI</a>
+        <a href="https://github.com/Emen11" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/elie-menassa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
   </footer>

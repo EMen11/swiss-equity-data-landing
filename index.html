@@ -407,6 +407,59 @@
       color: var(--accent);
     }
 
+    .roadmap-callout {
+      margin-top: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 32px 34px;
+      box-shadow: 0 14px 34px rgba(23, 36, 54, 0.06);
+    }
+
+    .roadmap-callout h3 {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .roadmap-callout-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .roadmap-callout p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .roadmap-callout p + p {
+      margin-top: 16px;
+      color: var(--text-dim);
+    }
+
+    .roadmap-tags {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .roadmap-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      border: 1px solid var(--border-light);
+      padding: 9px 12px;
+      letter-spacing: 0.05em;
+      background: var(--bg);
+    }
+
     /* WHO */
     .who-section {
       border-top: 1px solid var(--border);
@@ -626,6 +679,8 @@
       .problem-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
       .problem-item:last-child { border-bottom: none; }
       .product-grid { grid-template-columns: 1fr; }
+      .roadmap-callout { padding: 28px 24px; }
+      .roadmap-callout-grid { grid-template-columns: 1fr; gap: 24px; }
       .who-grid { grid-template-columns: 1fr 1fr; }
       .cred-grid { grid-template-columns: 1fr; }
       .cta-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -742,6 +797,21 @@
         </div>
       </div>
 
+      <div class="roadmap-callout">
+        <h3>PRODUCT ROADMAP</h3>
+        <div class="roadmap-callout-grid">
+          <div>
+            <p>The current public beta deliberately focuses on what is useful today: web exploration, normalized fundamentals, calculated ratios, historical charts, coverage/reliability notes and Excel/CSV exports.</p>
+            <p>The Python API and MCP layer remain on the roadmap. They will be added only if user feedback confirms a real need for programmatic or AI-assisted workflows. The core product remains a clean, checked and directly usable Swiss equity data layer.</p>
+          </div>
+          <div class="roadmap-tags">
+            <span class="roadmap-tag">Available now: Web + Excel/CSV</span>
+            <span class="roadmap-tag">Roadmap: Python API</span>
+            <span class="roadmap-tag">Exploration: MCP / AI workflows</span>
+          </div>
+        </div>
+      </div>
+
       <div class="metrics-list">
         <span class="metric-tag accent">Revenue</span>
         <span class="metric-tag accent">EBITDA</span>
@@ -771,9 +841,6 @@
         </div>
       </div>
 
-      <div style="margin-top: 16px; padding: 14px 20px; border: 1px solid var(--border); border-left: 2px solid var(--border-light); background: var(--surface);">
-        <span style="font-size: 13px; color: var(--text-dim);">The Python API and MCP layer remain on the roadmap. The current public beta focuses on web exploration, exports, reliability notes and a first analytics layer.</span>
-      </div>
     </div>
   </section>
 
@@ -854,8 +921,6 @@
           <p>Swiss Equity Data now has a live public beta with 5 selected Swiss listed companies, up to 10 years of annual fundamentals, calculated ratios, reliability notes, charts and Excel/CSV exports. The beta does not validate commercial demand yet, but it provides a real product demo for market feedback.</p>
           <br />
           <p>Next step: validate whether qualified prospects use the exports, request broader coverage, and see value in the reliability layer.</p>
-          <br />
-          <p style="color: var(--text-dim); font-size: 13px;">Built by <strong style="color: var(--text-muted);">Elie Menassa</strong> — Mathematical Data Scientist, CFA Candidate.</p>
         </div>
       </div>
     </div>

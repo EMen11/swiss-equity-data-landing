@@ -428,9 +428,23 @@
 
     .roadmap-callout-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-columns: 1fr 1fr;
       gap: 36px;
       align-items: start;
+    }
+
+    .roadmap-intro {
+      max-width: 840px;
+      margin-bottom: 28px;
+    }
+
+    .roadmap-column-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
     .roadmap-callout p {
@@ -444,20 +458,31 @@
       color: var(--text-dim);
     }
 
-    .roadmap-tags {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .roadmap-code,
+    .roadmap-example {
+      margin-top: 20px;
+      border: 1px solid var(--border-light);
+      background: var(--bg);
+      padding: 18px 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      overflow-x: auto;
     }
 
-    .roadmap-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      color: var(--text-muted);
-      border: 1px solid var(--border-light);
-      padding: 9px 12px;
-      letter-spacing: 0.05em;
-      background: var(--bg);
+    .roadmap-example {
+      border-left: 2px solid var(--accent-dim);
+      white-space: normal;
+    }
+
+    .roadmap-example strong {
+      display: block;
+      color: var(--accent);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
     /* WHO */
@@ -799,15 +824,28 @@
 
       <div class="roadmap-callout">
         <h3>PRODUCT ROADMAP</h3>
+        <p class="roadmap-intro">The current public beta deliberately focuses on what is useful today: web exploration, normalized fundamentals, calculated ratios, historical charts, coverage/reliability notes and Excel/CSV exports.</p>
         <div class="roadmap-callout-grid">
           <div>
-            <p>The current public beta deliberately focuses on what is useful today: web exploration, normalized fundamentals, calculated ratios, historical charts, coverage/reliability notes and Excel/CSV exports.</p>
-            <p>The Python API and MCP layer remain on the roadmap. They will be added only if user feedback confirms a real need for programmatic or AI-assisted workflows. The core product remains a clean, checked and directly usable Swiss equity data layer.</p>
+            <div class="roadmap-column-title">Available now</div>
+            <p>The beta already lets users explore 5 Swiss listed companies, with up to 10 years of annual data, normalized fundamentals, calculated ratios, historical charts, reliability notes and Excel/CSV exports.</p>
+            <pre class="roadmap-code"><code># Current public beta
+companies = ["DKSH.SW", "HIAG.SW", "SCMN.SW", "GEBN.SW", "SIKA.SW"]
+
+annual_fundamentals = "up to 10 years"
+outputs = ["web app", "charts", "Excel", "CSV"]
+layers = ["data", "reliability notes", "basic analytics"]</code></pre>
           </div>
-          <div class="roadmap-tags">
-            <span class="roadmap-tag">Available now: Web + Excel/CSV</span>
-            <span class="roadmap-tag">Roadmap: Python API</span>
-            <span class="roadmap-tag">Exploration: MCP / AI workflows</span>
+          <div>
+            <div class="roadmap-column-title">Roadmap API + MCP</div>
+            <p>A Python API could later make the same checked dataset available directly inside Python notebooks, valuation models or BI pipelines.</p>
+            <p>MCP means a controlled bridge between the Swiss equity data layer and AI tools such as Claude. Instead of guessing from general knowledge, the assistant could query the verified dataset and cite the available fields.</p>
+            <pre class="roadmap-code"><code>df = get_fundamentals("SIKA.SW", years=10)
+ratios = get_ratios("GEBN.SW")</code></pre>
+            <div class="roadmap-example">
+              <strong>Example Claude question</strong>
+              “Compare Sika and Geberit margins over the last 10 years and flag any missing or calculated fields.”
+            </div>
           </div>
         </div>
       </div>

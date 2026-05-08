@@ -428,9 +428,23 @@
 
     .roadmap-callout-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-columns: 1fr 1fr;
       gap: 36px;
       align-items: start;
+    }
+
+    .roadmap-intro {
+      max-width: 840px;
+      margin-bottom: 28px;
+    }
+
+    .roadmap-column-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
     .roadmap-callout p {
@@ -444,20 +458,31 @@
       color: var(--text-dim);
     }
 
-    .roadmap-tags {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .roadmap-code,
+    .roadmap-example {
+      margin-top: 20px;
+      border: 1px solid var(--border-light);
+      background: var(--bg);
+      padding: 18px 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      overflow-x: auto;
     }
 
-    .roadmap-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      color: var(--text-muted);
-      border: 1px solid var(--border-light);
-      padding: 9px 12px;
-      letter-spacing: 0.05em;
-      background: var(--bg);
+    .roadmap-example {
+      border-left: 2px solid var(--accent-dim);
+      white-space: normal;
+    }
+
+    .roadmap-example strong {
+      display: block;
+      color: var(--accent);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
     /* WHO */
@@ -799,15 +824,28 @@
 
       <div class="roadmap-callout">
         <h3>ROADMAP PRODUIT</h3>
+        <p class="roadmap-intro">La beta publique actuelle se concentre volontairement sur ce qui est déjà utile aujourd’hui : exploration web, fondamentaux normalisés, ratios calculés, graphiques historiques, notes de couverture/fiabilité et exports Excel/CSV.</p>
         <div class="roadmap-callout-grid">
           <div>
-            <p>La beta publique actuelle se concentre volontairement sur ce qui est déjà utile aujourd’hui : exploration web, fondamentaux normalisés, ratios calculés, graphiques historiques, notes de couverture/fiabilité et exports Excel/CSV.</p>
-            <p>L’API Python et la couche MCP restent en roadmap. Elles seront ajoutées seulement si les retours utilisateurs confirment un besoin réel pour des workflows programmatiques ou assistés par IA. Le cœur du produit reste d’abord une base suisse propre, contrôlée et directement exploitable.</p>
+            <div class="roadmap-column-title">Disponible maintenant</div>
+            <p>La beta permet déjà d’explorer 5 sociétés suisses cotées, avec jusqu’à 10 ans de données annuelles, des fondamentaux normalisés, des ratios calculés, des graphiques historiques, des notes de fiabilité et des exports Excel/CSV.</p>
+            <pre class="roadmap-code"><code># Beta publique actuelle
+societes = ["DKSH.SW", "HIAG.SW", "SCMN.SW", "GEBN.SW", "SIKA.SW"]
+
+fondamentaux = "jusqu'à 10 ans"
+sorties = ["app web", "graphiques", "Excel", "CSV"]
+couches = ["data", "fiabilité", "analytics simple"]</code></pre>
           </div>
-          <div class="roadmap-tags">
-            <span class="roadmap-tag">Disponible maintenant : Web + Excel/CSV</span>
-            <span class="roadmap-tag">Roadmap : API Python</span>
-            <span class="roadmap-tag">Exploration : MCP / AI workflows</span>
+          <div>
+            <div class="roadmap-column-title">Roadmap API + MCP</div>
+            <p>Une API Python pourrait ensuite rendre le même dataset contrôlé directement accessible dans des notebooks, modèles de valorisation ou pipelines BI.</p>
+            <p>Le MCP désigne un pont contrôlé entre la couche de données actions suisses et des outils IA comme Claude. Au lieu de répondre depuis sa connaissance générale, l’assistant pourrait interroger le dataset vérifié et s’appuyer sur les champs disponibles.</p>
+            <pre class="roadmap-code"><code>df = get_fundamentals("SIKA.SW", years=10)
+ratios = get_ratios("GEBN.SW")</code></pre>
+            <div class="roadmap-example">
+              <strong>Exemple de question à Claude</strong>
+              « Compare les marges de Sika et Geberit sur les 10 dernières années et signale les champs manquants ou calculés. »
+            </div>
           </div>
         </div>
       </div>

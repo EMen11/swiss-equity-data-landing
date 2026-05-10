@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>swiss-equity-data — Swiss equity fundamentals for analysis and AI workflows</title>
-  <meta name="description" content="Public beta for Swiss listed company fundamentals: normalized annual financials, ratios, reliability notes, Excel/CSV exports and a basic analytics layer for selected Swiss equities." />
+  <meta name="description" content="Public beta and Annual Data Packs preview for Swiss listed company fundamentals: normalized annual financials, ratios, reliability notes, Excel/CSV exports and controlled MCP/API access for AI-assisted workflows." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -485,6 +485,113 @@
       margin-bottom: 8px;
     }
 
+    .coverage-grid {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .coverage-block {
+      background: var(--surface);
+      padding: 24px 28px;
+    }
+
+    .coverage-block-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .coverage-block p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* AI / MCP */
+    .ai-section {
+      border-top: 1px solid var(--border);
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 48px;
+      align-items: start;
+      margin-top: 56px;
+    }
+
+    .ai-copy p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .ai-copy h3 {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 28px 0 14px;
+    }
+
+    .ai-example-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .ai-example-item {
+      border: 1px solid var(--border-light);
+      background: var(--surface);
+      padding: 12px 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .guardrail-box {
+      margin-top: 28px;
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--red);
+      background: var(--surface);
+      padding: 20px 22px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .mcp-screenshot-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 14px;
+      box-shadow: 0 18px 42px rgba(23, 36, 54, 0.08);
+    }
+
+    .mcp-screenshot {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .screenshot-caption {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.55;
+    }
+
     /* WHO */
     .who-section {
       border-top: 1px solid var(--border);
@@ -704,6 +811,8 @@
       .problem-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
       .problem-item:last-child { border-bottom: none; }
       .product-grid { grid-template-columns: 1fr; }
+      .coverage-grid { grid-template-columns: 1fr; }
+      .ai-grid { grid-template-columns: 1fr; gap: 32px; }
       .roadmap-callout { padding: 28px 24px; }
       .roadmap-callout-grid { grid-template-columns: 1fr; gap: 24px; }
       .who-grid { grid-template-columns: 1fr 1fr; }
@@ -720,6 +829,7 @@
     <ul class="nav-links">
       <li><a href="#problem">Problem</a></li>
       <li><a href="#product">Product</a></li>
+      <li><a href="#ai-mcp">AI / MCP</a></li>
       <li><a href="#beta">Beta</a></li>
       <li><a href="#who">For whom</a></li>
       <li><a href="#early-access">Feedback</a></li>
@@ -732,10 +842,10 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-label">SIX Swiss Exchange · Public Beta · Fundamentals · Analytics</div>
-    <h1>Swiss equity fundamentals,<br /><em>structured for analysis.</em></h1>
+    <div class="hero-label">SIX Swiss Exchange · Public Beta · Fundamentals · Reliability · AI-ready Access</div>
+    <h1>Swiss equity fundamentals,<br /><em>structured for analysis and AI workflows.</em></h1>
     <p class="hero-sub">
-      Public beta showcasing normalized annual fundamentals for selected Swiss listed companies, enriched with data coverage notes, reliability checks, exportable datasets and a basic analytics layer.
+      Public beta showcasing normalized annual fundamentals for selected Swiss listed companies, enriched with reliability notes, exportable Excel/CSV datasets, a basic analytics layer and a preview of controlled MCP/API access for AI-assisted workflows.
       <br /><br />
       Current beta: 5 companies, up to 10 years of annual data, financials, ratios, historical charts, reliability notes and Excel/CSV exports.
     </p>
@@ -748,9 +858,10 @@
       <span class="code-comment"># Public beta</span><br />
       companies = [<span class="code-string">"DKSH.SW"</span>, <span class="code-string">"HIAG.SW"</span>, <span class="code-string">"SCMN.SW"</span>, <span class="code-string">"GEBN.SW"</span>, <span class="code-string">"SIKA.SW"</span>]<br /><br />
       <span class="code-comment"># Available now</span><br />
-      annual_fundamentals = <span class="code-string">"up to 10 years"</span><br />
-      outputs = [<span class="code-string">"web app"</span>, <span class="code-string">"charts"</span>, <span class="code-string">"Excel"</span>, <span class="code-string">"CSV"</span>]<br />
-      layers = [<span class="code-string">"data"</span>, <span class="code-string">"reliability notes"</span>, <span class="code-string">"basic analytics"</span>]
+      outputs = [<span class="code-string">"web app"</span>, <span class="code-string">"Excel"</span>, <span class="code-string">"CSV"</span>, <span class="code-string">"charts"</span>]<br />
+      layers = [<span class="code-string">"data"</span>, <span class="code-string">"reliability"</span>, <span class="code-string">"basic analytics"</span>]<br /><br />
+      <span class="code-comment"># Roadmap</span><br />
+      access = [<span class="code-string">"Python API"</span>, <span class="code-string">"MCP"</span>]
     </div>
 
     <div class="hero-scroll">
@@ -797,49 +908,42 @@
   <section class="product-section" id="product">
     <div class="section-inner">
       <div class="section-label">The product</div>
-      <h2>Data Layer + Quality Checks +<br />Basic Analytics Layer.</h2>
+      <h2>Data Layer + Reliability + Analytics +<br />Controlled MCP/API Access.</h2>
 
       <div class="product-grid">
         <div class="product-card">
           <div class="product-icon">⌁</div>
-          <h3>Data layer</h3>
+          <h3>Data Layer</h3>
           <p>Normalized annual fundamentals for selected Swiss listed companies: income statement, balance sheet, cash flow, prices, market cap and enterprise value.</p>
         </div>
         <div class="product-card">
           <div class="product-icon">✓</div>
-          <h3>Quality checks</h3>
-          <p>Coverage notes, missing fields, calculated values and reliability context. The goal is not to hide limitations, but to make data quality visible.</p>
+          <h3>Coverage &amp; Reliability</h3>
+          <p>Coverage notes, missing fields, calculated values and reliability context. Limitations are documented instead of hidden.</p>
         </div>
         <div class="product-card">
           <div class="product-icon">⌁</div>
-          <h3>Basic analytics</h3>
-          <p>Ratios, historical charts, company comparisons and simple analytical indicators. No stock picking, no buy/sell recommendations.</p>
+          <h3>Basic Analytics</h3>
+          <p>Ratios, margins, growth, historical charts and company comparisons. Descriptive analytics only, not investment recommendations.</p>
         </div>
         <div class="product-card">
-          <div class="product-icon">↓</div>
-          <h3>Exports</h3>
-          <p>Excel and CSV exports for analysts, valuation work, research workflows and Python/BI exploration.</p>
+          <div class="product-icon">↔</div>
+          <h3>API / MCP Access</h3>
+          <p>Roadmap layer for querying the same structured dataset from Python, Claude, Cursor, Kimi or other AI-assisted workflows.</p>
         </div>
       </div>
 
       <div class="roadmap-callout">
         <h3>PRODUCT ROADMAP</h3>
-        <p class="roadmap-intro">The current public beta deliberately focuses on what is useful today: web exploration, normalized fundamentals, calculated ratios, historical charts, coverage/reliability notes and Excel/CSV exports.</p>
+        <p class="roadmap-intro">Annual Data Packs are suited for users who want versioned Excel/CSV datasets. MCP/API access is intended for recurring workflows where users query a maintained dataset from Python or AI-assisted tools.</p>
         <div class="roadmap-callout-grid">
           <div>
-            <div class="roadmap-column-title">Available now</div>
-            <p>The beta already lets users explore 5 Swiss listed companies, with up to 10 years of annual data, normalized fundamentals, calculated ratios, historical charts, reliability notes and Excel/CSV exports.</p>
+            <div class="roadmap-column-title">Current beta</div>
+            <p>Web interface, normalized annual fundamentals, ratios, reliability notes, basic analytics and Excel/CSV exports.</p>
           </div>
           <div>
-            <div class="roadmap-column-title">Roadmap API + MCP</div>
-            <p>A Python API could later make the same checked dataset available directly inside Python notebooks, valuation models or BI pipelines.</p>
-            <p>MCP means a controlled bridge between the Swiss equity data layer and AI tools such as Claude. Instead of guessing from general knowledge, the assistant could query the verified dataset and cite the available fields.</p>
-            <pre class="roadmap-code"><code>df = get_fundamentals("SIKA.SW", years=10)
-ratios = get_ratios("GEBN.SW")</code></pre>
-            <div class="roadmap-example">
-              <strong>Example Claude question</strong>
-              “Compare Sika and Geberit margins over the last 10 years and flag any missing or calculated fields.”
-            </div>
+            <div class="roadmap-column-title">Next</div>
+            <p>Versioned Annual Data Packs, broader Swiss listed equity coverage, FMP-based expansion, traceable PDF extraction, annual report validation, Python API and controlled MCP access.</p>
           </div>
         </div>
       </div>
@@ -862,17 +966,53 @@ ratios = get_ratios("GEBN.SW")</code></pre>
         <span class="metric-tag">+ more</span>
       </div>
 
-      <div style="margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border);">
-        <div style="background: var(--surface); padding: 24px 28px;">
-          <div style="font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px;">Current beta coverage</div>
-          <p style="font-size: 14px; color: var(--text-muted);">Current beta is limited to 5 companies. Broader SMI/SPI coverage is on the roadmap after feedback and data quality validation.</p>
+      <div class="coverage-grid">
+        <div class="coverage-block">
+          <div class="coverage-block-title">Long-term coverage target</div>
+          <p>The long-term goal is to expand toward the full Swiss listed equity universe, around 220 companies, with a particular focus on mid/small caps where structured information is often less accessible.</p>
         </div>
-        <div style="background: var(--surface); padding: 24px 28px;">
-          <div style="font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px;">Historical depth</div>
-          <p style="font-size: 14px; color: var(--text-muted);">Available now: up to 10 years of annual data for selected companies. Longer history remains subject to data availability and quality checks.</p>
+        <div class="coverage-block">
+          <div class="coverage-block-title">Historical depth</div>
+          <p>Available now: up to 10 years of annual data for selected companies. Longer history remains subject to data availability and quality checks.</p>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- AI / MCP -->
+  <section class="ai-section" id="ai-mcp">
+    <div class="section-inner">
+      <div class="section-label">AI / MCP Preview</div>
+      <h2>From exportable dataset to<br />controlled query layer.</h2>
+      <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 760px;">
+        The MCP layer is designed to make Swiss Equity Data queryable from AI-assisted workflows. Instead of relying on general model knowledge, Claude or other tools can query controlled functions on top of structured Swiss equity data.
+      </p>
+
+      <div class="ai-grid">
+        <div class="ai-copy">
+          <h3>What access enables</h3>
+          <p>Controlled MCP/API access is a roadmap layer for recurring research, valuation, data quality and reporting workflows. It is designed to expose the same maintained dataset through explicit functions, rather than turn the product into a stock-picking chatbot.</p>
+
+          <h3>Example questions</h3>
+          <ul class="ai-example-list">
+            <li class="ai-example-item">Compare DKSH.SW, GEBN.SW and SIKA.SW for 2025.</li>
+            <li class="ai-example-item">Show the quality report for HIAG.SW.</li>
+            <li class="ai-example-item">Generate a comparables table for selected Swiss listed companies.</li>
+            <li class="ai-example-item">Which companies have missing EBITDA values?</li>
+            <li class="ai-example-item">Export EV/EBITDA by year for selected tickers.</li>
+          </ul>
+
+          <div class="guardrail-box">
+            Designed for analysis support only. No buy/sell recommendations, no stock picks, no personalized investment advice and no price predictions.
+          </div>
+        </div>
+
+        <figure class="mcp-screenshot-wrap">
+          <img src="assets/images/claude_mcp_demo.png" alt="Claude Desktop MCP workflow using swiss-equity-data" class="mcp-screenshot" />
+          <figcaption class="screenshot-caption">Example Claude Desktop workflow using swiss-equity-data. The output remains factual and avoids investment advice.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -892,6 +1032,7 @@ ratios = get_ratios("GEBN.SW")</code></pre>
         <div class="product-card"><h3>Comparisons</h3><p>Company comparisons</p></div>
         <div class="product-card"><h3>Reliability</h3><p>Data coverage and reliability notes</p></div>
         <div class="product-card"><h3>Exports</h3><p>Excel and CSV exports</p></div>
+        <div class="product-card"><h3>AI / MCP Preview</h3><p>The beta now includes a preview of controlled AI-assisted access via Claude Desktop workflow.</p></div>
       </div>
 
       <div style="margin-top: 32px; padding: 24px 28px; border: 1px solid var(--border); background: var(--surface);">
@@ -928,7 +1069,7 @@ ratios = get_ratios("GEBN.SW")</code></pre>
 
       <div class="not-for">
         <div class="not-for-label">Not built for</div>
-        <p>Not a stock-picking tool. No buy/sell recommendations. Not a Bloomberg replacement. Current beta is limited to 5 companies. Broader SMI/SPI coverage is roadmap. Python API and MCP are roadmap, not the current product.</p>
+        <p>Not a stock-picking tool. No buy/sell recommendations. No personalized investment advice. No price predictions. Not a Bloomberg replacement. Current beta is limited to 5 companies. Broader Swiss equity coverage, Python API and controlled MCP access remain roadmap items.</p>
       </div>
     </div>
   </section>
@@ -950,7 +1091,7 @@ ratios = get_ratios("GEBN.SW")</code></pre>
           <h3>Project status</h3>
           <div class="status-badge"><span class="status-dot"></span> Public beta live</div>
           <br /><br />
-          <p>Swiss Equity Data now has a live public beta with 5 selected Swiss listed companies, up to 10 years of annual fundamentals, calculated ratios, reliability notes, charts and Excel/CSV exports. The beta does not validate commercial demand yet, but it provides a real product demo for market feedback.</p>
+          <p>Swiss Equity Data now has a live public beta with 5 selected Swiss listed companies, up to 10 years of annual fundamentals, calculated ratios, reliability notes, charts, Excel/CSV exports and an AI/MCP preview showing how the dataset could be queried from controlled AI-assisted workflows.</p>
           <br />
           <p>Next step: validate whether qualified prospects use the exports, request broader coverage, and see value in the reliability layer.</p>
         </div>
@@ -964,7 +1105,7 @@ ratios = get_ratios("GEBN.SW")</code></pre>
       <div class="cta-text">
         <h2>Explore<br /><em>the public beta.</em></h2>
         <p>
-          Swiss Equity Data is now live as a public beta. Try the current dataset, download the exports, and share feedback if you work with Swiss listed companies, valuation, research or data workflows.
+          Swiss Equity Data is now live as a public beta. Try the public beta, download the exports, and review the AI/MCP preview if you are interested in recurring data access through Python or AI-assisted workflows.
         </p>
         <div style="font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-dim); line-height: 1.8;">
           — Public beta available now<br />
@@ -975,7 +1116,7 @@ ratios = get_ratios("GEBN.SW")</code></pre>
 
       <div class="cta-form cta-card">
         <p>
-          Open the public beta, explore the current 5-company dataset, then share feedback or request access for broader coverage discussions.
+          Open the public beta, explore the current 5-company dataset, then share feedback or request access for broader coverage, Annual Data Packs or controlled MCP/API discussions.
         </p>
         <a href="https://swiss-equity-data-beta.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">Open public beta →</a>
         <a href="https://tally.so/r/Ek85DX" target="_blank" rel="noopener noreferrer" class="btn-secondary">Give feedback / request access →</a>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>swiss-equity-data — fondamentaux suisses pour l’analyse et les workflows IA</title>
-  <meta name="description" content="Beta publique et aperçu de packs annuels de fondamentaux suisses : données normalisées, ratios, notes de fiabilité, exports Excel/CSV et accès MCP/API contrôlé pour workflows assistés par IA." />
+  <title>swiss-equity-data — fondamentaux suisses traçables avec accès IA contrôlé</title>
+  <meta name="description" content="Fondamentaux suisses traçables avec contrôles qualité, data packs validés, exports Excel/CSV et accès API/MCP contrôlé. Extension progressive vers une couverture plus large des sociétés suisses cotées." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -842,12 +842,10 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-label">SIX Swiss Exchange · Beta publique · Fondamentaux · Fiabilité · Accès IA</div>
-    <h1>Les fondamentaux des sociétés suisses,<br /><em>structurés pour l’analyse et les workflows IA.</em></h1>
+    <div class="hero-label">SIX Swiss Exchange · Beta publique · Fondamentaux validés · Traçabilité · Accès IA contrôlé</div>
+    <h1>Les fondamentaux des sociétés suisses,<br /><em>contrôlés, traçables et prêts pour les workflows IA.</em></h1>
     <p class="hero-sub">
-      Beta publique présentant des fondamentaux annuels normalisés pour une sélection de sociétés suisses cotées, enrichis avec des notes de fiabilité, des exports Excel/CSV, une première couche d’analyse et un aperçu d’un accès MCP/API contrôlé pour workflows assistés par IA.
-      <br /><br />
-      Beta actuelle : 5 sociétés, jusqu’à 10 ans de données annuelles, fondamentaux, ratios, graphiques historiques, notes de fiabilité et exports Excel/CSV.
+      Swiss Equity Data construit une couche de données structurées pour les sociétés cotées suisses, avec fondamentaux annuels validés, contrôles qualité, limites documentées, exports Excel/CSV et accès API/MCP contrôlé. La beta publique est live, avec une extension progressive vers une couverture plus large du marché suisse.
     </p>
     <div class="hero-actions">
       <a href="https://swiss-equity-data-beta.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ouvrir la beta publique →</a>
@@ -855,13 +853,14 @@
     </div>
 
     <div class="code-block">
-      <span class="code-comment"># Beta publique</span><br />
-      societes = [<span class="code-string">"DKSH.SW"</span>, <span class="code-string">"HIAG.SW"</span>, <span class="code-string">"SCMN.SW"</span>, <span class="code-string">"GEBN.SW"</span>, <span class="code-string">"SIKA.SW"</span>]<br /><br />
-      <span class="code-comment"># Disponible maintenant</span><br />
-      sorties = [<span class="code-string">"app web"</span>, <span class="code-string">"Excel"</span>, <span class="code-string">"CSV"</span>, <span class="code-string">"graphiques"</span>]<br />
-      couches = [<span class="code-string">"data"</span>, <span class="code-string">"fiabilité"</span>, <span class="code-string">"analytics simple"</span>]<br /><br />
-      <span class="code-comment"># Roadmap</span><br />
-      acces = [<span class="code-string">"API Python"</span>, <span class="code-string">"MCP"</span>]
+      <span class="code-comment"># Beta publique + data packs validés</span><br />
+      couverture = <span class="code-string">"sociétés suisses cotées sélectionnées"</span><br />
+      objectif = <span class="code-string">"couverture large des sociétés suisses cotées"</span><br /><br />
+      <span class="code-comment"># Couche qualité</span><br />
+      controles = [<span class="code-string">"suivi des sources"</span>, <span class="code-string">"provenance par champ"</span>, <span class="code-string">"limites documentées"</span>]<br />
+      sorties = [<span class="code-string">"app web"</span>, <span class="code-string">"Excel"</span>, <span class="code-string">"CSV"</span>, <span class="code-string">"notes qualité"</span>]<br /><br />
+      <span class="code-comment"># Accès contrôlé</span><br />
+      acces = [<span class="code-string">"API Python"</span>, <span class="code-string">"MCP"</span>, <span class="code-string">"workflows IA"</span>]
     </div>
 
     <div class="hero-scroll">
@@ -887,18 +886,18 @@
         </div>
         <div class="problem-item">
           <div class="problem-num">02</div>
-          <h3>Les outils gratuits restent fragiles</h3>
-          <p>yfinance tombe régulièrement en panne. IEX Cloud a fermé en 2024 sans préavis. Alpha Vantage limite à 25 appels par jour. Aucune garantie de continuité pour un workflow récurrent.</p>
+          <h3>Les outils gratuits ou peu coûteux ont leurs limites</h3>
+          <p>Les outils gratuits ou peu coûteux peuvent être utiles pour explorer des données, mais ils présentent souvent des limites de couverture, de quotas, de fiabilité ou de réutilisation qui les rendent fragiles pour des workflows professionnels récurrents.</p>
         </div>
         <div class="problem-item">
           <div class="problem-num">03</div>
-          <h3>Peu de solutions abordables sur l'univers SPI</h3>
-          <p>Le plan gratuit de Tikr couvre uniquement les États-Unis. Stockanalysis n'a pas d'API et interdit la redistribution. SimFin n'a ajouté la couverture européenne qu'en 2023.</p>
+          <h3>Les mid/small caps suisses restent difficiles à standardiser</h3>
+          <p>Pour de nombreuses sociétés suisses cotées, surtout hors grandes capitalisations, le problème n'est pas seulement l'accès aux chiffres. La difficulté consiste à transformer des rapports, libellés et formats dispersés en datasets comparables et réutilisables.</p>
         </div>
         <div class="problem-item">
           <div class="problem-num">04</div>
-          <h3>Des solutions institutionnelles hors de portée pour les petites structures</h3>
-          <p>SIX Financial Information et Bloomberg ciblent les grandes banques — à partir de 2 000 CHF/mois. Il n'existe pas d'offre intermédiaire à un prix raisonnable.</p>
+          <h3>Les outils institutionnels ne sont pas toujours accessibles</h3>
+          <p>Les grandes plateformes de données de marché servent bien les institutions, mais elles sont souvent trop larges, trop coûteuses ou trop complexes pour de petites équipes qui cherchent surtout des fondamentaux suisses propres et des comparables exportables.</p>
         </div>
       </div>
     </div>
@@ -908,42 +907,47 @@
   <section class="product-section" id="product">
     <div class="section-inner">
       <div class="section-label">Le produit</div>
-      <h2>Data Layer + Fiabilité + Analytics +<br />Accès MCP/API contrôlé.</h2>
+      <h2>Couche de données validées + traçabilité + accès IA contrôlé.</h2>
 
       <div class="product-grid">
         <div class="product-card">
           <div class="product-icon">⌁</div>
-          <h3>Data Layer</h3>
-          <p>Fondamentaux annuels normalisés pour une sélection de sociétés suisses cotées : compte de résultat, bilan, cash flow, prix, market cap et enterprise value.</p>
+          <h3>Couche de données structurées</h3>
+          <p>Fondamentaux annuels, ratios et datasets exportables pour les sociétés suisses cotées.</p>
         </div>
         <div class="product-card">
           <div class="product-icon">✓</div>
-          <h3>Couverture &amp; Fiabilité</h3>
-          <p>Notes de couverture, champs manquants, valeurs calculées et contexte de fiabilité. Les limites sont documentées au lieu d’être cachées.</p>
+          <h3>Qualité &amp; Traçabilité</h3>
+          <p>Suivi des sources, provenance par champ, visibilité des champs manquants, contrôles de cohérence et limites documentées.</p>
         </div>
         <div class="product-card">
           <div class="product-icon">⌁</div>
-          <h3>Analytics simple</h3>
-          <p>Ratios, marges, croissance, graphiques historiques et comparaisons entre sociétés. Analyse descriptive uniquement, pas de recommandation d’investissement.</p>
+          <h3>Analytics &amp; Comparables</h3>
+          <p>Ratios, marges, croissance, vues historiques et comparables. Analyse descriptive uniquement.</p>
         </div>
         <div class="product-card">
           <div class="product-icon">↔</div>
-          <h3>Accès API / MCP</h3>
-          <p>Couche roadmap pour interroger le même dataset structuré depuis Python, Claude, Cursor, Kimi ou d’autres workflows assistés par IA.</p>
+          <h3>Accès API / MCP contrôlé</h3>
+          <p>Couche d’accès roadmap pour interroger le dataset validé depuis Python, Claude, Cursor ou d’autres workflows assistés par IA via des fonctions contrôlées.</p>
         </div>
+      </div>
+
+      <div style="margin-top: 40px; padding: 32px 34px; border: 1px solid var(--border); border-left: 3px solid var(--accent-dim); background: var(--surface); box-shadow: 0 14px 34px rgba(23, 36, 54, 0.06);">
+        <h3 style="font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 400; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px;">Qualité &amp; Traçabilité</h3>
+        <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7;">La qualité n’est pas une couche ajoutée après coup. Le dataset est construit autour du suivi des sources, de la provenance par champ, des limites documentées et de la validation des releases. Les rapports annuels sont utilisés comme sources de validation lorsque disponibles, afin que l’utilisateur comprenne d’où viennent les chiffres et quels champs doivent être traités avec prudence.</p>
       </div>
 
       <div class="roadmap-callout">
         <h3>ROADMAP PRODUIT</h3>
-        <p class="roadmap-intro">Les Annual Data Packs conviennent aux utilisateurs qui veulent des datasets Excel/CSV versionnés. L’accès MCP/API vise les workflows récurrents où l’utilisateur interroge une base maintenue depuis Python ou des outils assistés par IA.</p>
+        <p class="roadmap-intro">Les data packs annuels validés conviennent aux utilisateurs qui veulent des datasets Excel/CSV structurés. L’accès MCP/API vise les workflows récurrents où l’utilisateur interroge une base maintenue depuis Python ou des outils assistés par IA.</p>
         <div class="roadmap-callout-grid">
           <div>
             <div class="roadmap-column-title">Beta actuelle</div>
-            <p>Interface web, fondamentaux annuels normalisés, ratios, notes de fiabilité, analytics simple et exports Excel/CSV.</p>
+            <p>Interface web, fondamentaux annuels validés, ratios, notes qualité, limites documentées et exports Excel/CSV.</p>
           </div>
           <div>
             <div class="roadmap-column-title">Prochaines étapes</div>
-            <p>Annual Data Packs versionnés, couverture élargie des sociétés suisses cotées, expansion via FMP, extraction PDF traçable, validation des rapports annuels, API Python et accès MCP contrôlé.</p>
+            <p>Data packs annuels validés, couverture élargie des sociétés suisses cotées, validation par rapports annuels, API Python et accès MCP contrôlé.</p>
           </div>
         </div>
       </div>
@@ -969,11 +973,11 @@
       <div class="coverage-grid">
         <div class="coverage-block">
           <div class="coverage-block-title">Objectif de couverture à terme</div>
-          <p>L’objectif à terme est d’étendre la couverture vers l’univers complet des sociétés suisses cotées, environ 220 sociétés, avec un focus particulier sur les mid/small caps dont les données structurées sont souvent moins accessibles.</p>
+          <p>L’objectif à terme est d’atteindre environ 220 sociétés suisses cotées, avec un focus particulier sur les mid/small caps dont les fondamentaux structurés et traçables sont plus difficiles à obtenir.</p>
         </div>
         <div class="coverage-block">
-          <div class="coverage-block-title">Profondeur historique</div>
-          <p>Disponible maintenant : jusqu’à 10 ans de données annuelles sur les sociétés sélectionnées. Un historique plus long dépendra de la disponibilité et des contrôles qualité.</p>
+          <div class="coverage-block-title">Statut actuel</div>
+          <p>Beta publique live. Data packs validés disponibles sur demande. Extension progressive en cours.</p>
         </div>
       </div>
 
@@ -983,10 +987,10 @@
   <!-- IA / MCP -->
   <section class="ai-section" id="ai-mcp">
     <div class="section-inner">
-      <div class="section-label">Aperçu IA / MCP</div>
-      <h2>Du dataset exportable à<br />une couche interrogeable contrôlée.</h2>
+      <div class="section-label">IA / MCP</div>
+      <h2>Accès IA contrôlé,<br />fondé sur des données validées.</h2>
       <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 760px;">
-        La couche MCP vise à rendre Swiss Equity Data interrogeable depuis des workflows assistés par IA. Au lieu de s’appuyer sur la connaissance générale du modèle, Claude ou d’autres outils peuvent appeler des fonctions contrôlées au-dessus d’un dataset suisse structuré.
+        La couche MCP vise à rendre Swiss Equity Data interrogeable depuis des workflows assistés par IA, sans laisser le modèle inventer des données financières. L’assistant interroge des fonctions contrôlées au-dessus d’un dataset structuré et contrôlé.
       </p>
 
       <div class="ai-grid">
@@ -996,11 +1000,11 @@
 
           <h3>Exemples de questions</h3>
           <ul class="ai-example-list">
-            <li class="ai-example-item">Comparer DKSH.SW, GEBN.SW et SIKA.SW pour 2025.</li>
-            <li class="ai-example-item">Afficher le rapport de fiabilité de HIAG.SW.</li>
-            <li class="ai-example-item">Générer une table de comparables pour des sociétés suisses sélectionnées.</li>
-            <li class="ai-example-item">Identifier les sociétés avec EBITDA manquant.</li>
-            <li class="ai-example-item">Exporter EV/EBITDA par année pour une sélection de tickers.</li>
+            <li class="ai-example-item">Comparer des sociétés industrielles suisses sélectionnées sur la croissance du chiffre d’affaires et la marge EBIT.</li>
+            <li class="ai-example-item">Afficher les notes qualité d’une société sélectionnée.</li>
+            <li class="ai-example-item">Générer une table de comparables pour des sociétés suisses cotées sélectionnées.</li>
+            <li class="ai-example-item">Identifier les sociétés avec champs manquants ou limites documentées.</li>
+            <li class="ai-example-item">Exporter les ratios de valorisation par année pour une sélection de tickers.</li>
           </ul>
 
           <div class="guardrail-box">
@@ -1019,24 +1023,22 @@
   <!-- BETA -->
   <section class="cred-section" id="beta">
     <div class="section-inner">
-      <div class="section-label">Beta publique</div>
-      <h2>Beta publique actuelle</h2>
-      <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 720px;">Une preuve de concept utilisable, pas encore un produit commercial complet.</p>
+      <div class="section-label">Beta publique et data packs validés</div>
+      <h2>Beta publique et data packs validés</h2>
+      <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 720px;">La beta publique permet d’explorer en ligne un univers sélectionné de sociétés suisses cotées. Un data pack validé plus large est disponible sur demande, avec exports Excel/CSV, ratios, notes qualité, limites documentées et provenance par champ.</p>
 
       <div class="product-grid">
-        <div class="product-card"><h3>5 sociétés</h3><p>5 sociétés suisses cotées</p></div>
-        <div class="product-card"><h3>10 ans</h3><p>Jusqu’à 10 ans de données annuelles</p></div>
-        <div class="product-card"><h3>Financiers</h3><p>États financiers normalisés</p></div>
-        <div class="product-card"><h3>Ratios</h3><p>Ratios et marges calculés</p></div>
-        <div class="product-card"><h3>Graphiques</h3><p>Graphiques historiques</p></div>
-        <div class="product-card"><h3>Comparaisons</h3><p>Comparaisons entre sociétés</p></div>
-        <div class="product-card"><h3>Fiabilité</h3><p>Notes de couverture et fiabilité</p></div>
-        <div class="product-card"><h3>Exports</h3><p>Exports Excel et CSV</p></div>
-        <div class="product-card"><h3>Aperçu IA / MCP</h3><p>La beta inclut maintenant un aperçu d’un accès assisté par IA contrôlé via workflow Claude Desktop.</p></div>
+        <div class="product-card"><h3>Beta publique live</h3><p>Explorer un univers sélectionné de sociétés suisses cotées</p></div>
+        <div class="product-card"><h3>Fondamentaux annuels</h3><p>Fondamentaux annuels validés, jusqu’à 10 ans de données</p></div>
+        <div class="product-card"><h3>Notes qualité</h3><p>Contrôles qualité et limites documentées par société</p></div>
+        <div class="product-card"><h3>Ratios et comparables</h3><p>Ratios calculés, marges et vues comparables</p></div>
+        <div class="product-card"><h3>Exports Excel/CSV</h3><p>Datasets structurés prêts à l’export</p></div>
+        <div class="product-card"><h3>Suivi des sources</h3><p>Provenance par champ et références sources</p></div>
+        <div class="product-card"><h3>Limites documentées</h3><p>Champs manquants et mises en garde explicitement documentés</p></div>
+        <div class="product-card"><h3>Roadmap API/MCP contrôlé</h3><p>Couche d’accès roadmap pour workflows assistés par IA via fonctions contrôlées</p></div>
       </div>
 
       <div style="margin-top: 32px; padding: 24px 28px; border: 1px solid var(--border); background: var(--surface);">
-        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px;">Sociétés couvertes : DKSH.SW, HIAG.SW, SCMN.SW, GEBN.SW, SIKA.SW.</p>
         <a href="https://swiss-equity-data-beta.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ouvrir la beta publique →</a>
       </div>
     </div>
@@ -1050,12 +1052,12 @@
 
       <div class="who-grid">
         <div class="who-card">
-          <div class="role">Petits asset managers</div>
-          <p>Gérants suisses ou européens de petite taille qui veulent filtrer et comparer des sociétés SPI sans reconstruire leur propre pipeline de données.</p>
+          <div class="role">Asset managers</div>
+          <p>Asset managers qui veulent filtrer, comparer et suivre des sociétés suisses cotées sans reconstruire leur propre pipeline de données.</p>
         </div>
         <div class="who-card">
           <div class="role">Boutiques M&amp;A / valuation</div>
-          <p>Équipes corporate finance, M&amp;A et valuation qui ont besoin de comparables cotés suisses pour valoriser des sociétés privées.</p>
+          <p>Équipes corporate finance, M&amp;A et valuation qui ont besoin de comparables cotés suisses propres, exportables et documentés pour leurs travaux d'analyse et de valorisation.</p>
         </div>
         <div class="who-card">
           <div class="role">Analystes indépendants</div>
@@ -1069,7 +1071,7 @@
 
       <div class="not-for">
         <div class="not-for-label">Pas conçu pour</div>
-        <p>Pas un outil de stock picking. Pas de recommandation buy/sell. Pas de conseil d’investissement personnalisé. Pas de prédiction de prix. Pas un remplacement de Bloomberg. La beta actuelle est limitée à 5 sociétés. La couverture élargie, l’API Python et l’accès MCP contrôlé restent des éléments de roadmap.</p>
+        <p>Pas un outil de stock picking. Pas de recommandation buy/sell. Pas de conseil d’investissement personnalisé. Pas de prédiction de prix. Pas un remplacement de Bloomberg. Pas encore une base institutionnelle complète comparable à un fournisseur de données établi. La couverture élargie et l’accès API/MCP contrôlé restent des éléments de roadmap.</p>
       </div>
     </div>
   </section>
@@ -1091,9 +1093,7 @@
           <h3>Statut du projet</h3>
           <div class="status-badge"><span class="status-dot"></span> Beta publique live</div>
           <br /><br />
-          <p>Swiss Equity Data dispose maintenant d’une beta publique avec 5 sociétés suisses cotées, jusqu’à 10 ans de fondamentaux annuels, ratios calculés, notes de fiabilité, graphiques, exports Excel/CSV et un aperçu IA/MCP montrant comment le dataset pourrait être interrogé depuis des workflows assistés par IA contrôlés.</p>
-          <br />
-          <p>Prochaine étape : vérifier si les prospects qualifiés utilisent les exports, demandent plus de couverture et voient une valeur dans la couche de fiabilité.</p>
+          <p>Swiss Equity Data dispose maintenant d’une beta publique et de data packs validés disponibles sur demande. L’accent est mis sur la qualité, la traçabilité, les limites documentées et les exports exploitables, avec un accès API/MCP contrôlé en roadmap et une extension progressive vers une couverture plus large du marché suisse.</p>
         </div>
       </div>
     </div>
@@ -1105,22 +1105,22 @@
       <div class="cta-text">
         <h2>Explorer<br /><em>la beta publique.</em></h2>
         <p>
-          Swiss Equity Data est maintenant disponible en beta publique. Testez la beta publique, téléchargez les exports et consultez l’aperçu IA/MCP si vous vous intéressez à un accès récurrent via Python ou workflows assistés par IA.
+          Explorez la beta publique, puis demandez l’accès au data pack validé si vous voulez des données Excel/CSV structurées, des notes qualité, des limites documentées et une roadmap vers un accès API/MCP contrôlé.
         </p>
         <div style="font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-dim); line-height: 1.8;">
           — Beta publique disponible maintenant<br />
-          — Feedback de prospects qualifiés recherché<br />
-          — API, couverture élargie et couche MCP en roadmap
+          — Data packs validés disponibles sur demande<br />
+          — Accès API/MCP contrôlé en roadmap
         </div>
       </div>
 
       <div class="cta-form cta-card">
         <p>
-          Ouvrez la beta publique, explorez le dataset actuel de 5 sociétés, puis partagez un feedback ou demandez un accès pour discuter d’une couverture élargie, d’Annual Data Packs ou d’un accès MCP/API contrôlé.
+          Explorez la beta publique, puis demandez l’accès au data pack validé si vous voulez des données Excel/CSV structurées, des notes qualité, des limites documentées et une roadmap vers un accès API/MCP contrôlé.
         </p>
         <a href="https://swiss-equity-data-beta.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ouvrir la beta publique →</a>
-        <a href="https://tally.so/r/Ek85DX" target="_blank" rel="noopener noreferrer" class="btn-secondary">Donner un feedback / demander un accès →</a>
-        <div class="form-note">Preuve de concept publique. Demande commerciale encore à valider.</div>
+        <a href="https://tally.so/r/Ek85DX" target="_blank" rel="noopener noreferrer" class="btn-secondary">Demander le data pack validé / donner un feedback →</a>
+        <div class="form-note">Beta publique live. Data packs validés sur demande.</div>
       </div>
     </div>
   </section>
@@ -1129,7 +1129,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-left">
-        swiss-equity-data · par <span>Elie Menassa</span> · Beta publique live
+        swiss-equity-data · par <span>Elie Menassa</span> · Beta publique live · data packs validés disponibles sur demande · roadmap API/MCP contrôlé
       </div>
       <div class="footer-links">
         <a href="https://swiss-equity-data-beta.streamlit.app/" target="_blank" rel="noopener noreferrer">Beta</a>
